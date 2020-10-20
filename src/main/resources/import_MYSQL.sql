@@ -8,3 +8,5 @@
  * Created: 19 oct. 2020
  */
 
+INSERT INTO
+

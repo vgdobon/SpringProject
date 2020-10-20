@@ -6,8 +6,10 @@
 package com.mycompany.springaplication.app.controller;
 
 import com.mycompany.springaplication.app.model.Employe;
+import com.mycompany.springaplication.app.service.EmployeService;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,15 +23,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping  (value ="/employee")
 public class EmployeController {
     
+    @Autowired
+    EmployeService employeService ;
+    
     @GetMapping (value = "/list" , produces="applicacion/json")
     public List<Employe> getListEmployes(){
-        List<Employe> employes = new ArrayList<>();
-        
-        Employe e1 = new Employe("Victor", 29, 4000);
-        Employe e2 = new Employe("Maria", 40, 2000);
-        
-        employes.add(e1);
-        employes.add(e2);
+        List<Employe> employes = n
         
         return employes;
     }

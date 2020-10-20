@@ -5,22 +5,33 @@
  */
 package com.mycompany.springaplication.app.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
  * @author vgd_9
  */
+
+@Entity
 public class Employe {
     
    
     private String name;
     private int age;
     private int salary;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
 
     public Employe(String name, int age, int salary) {
         this.name = name;
         this.age = age;
         this.salary = salary;
     }    
+    
     
     /**
      * @return the name
@@ -62,6 +73,14 @@ public class Employe {
      */
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
     
     
